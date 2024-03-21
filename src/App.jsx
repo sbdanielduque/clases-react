@@ -1,13 +1,13 @@
-import Footer from "./componets/Footer.jsx";
-import Navbar from "./componets/Navbar.jsx";
+import Footer from "./componets/layout/footer/Footer"
+import Navbar from "./componets/layout/navbar/Navbar"
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <Navbar />
+            <Footer />
+        </div>
+    )
 }
 
-export default App;
+export default App

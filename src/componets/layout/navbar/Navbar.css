@@ -1,0 +1,8 @@
+.navBar-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-navBar {
+    height: 150px;
+}

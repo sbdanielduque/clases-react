@@ -1,7 +1,12 @@
-import { createTheme } from "@mui/material"
+import { createTheme } from "@mui/material/styles"
 
-const principalTheme = createTheme({
+export const principalTheme = createTheme({
     palette: {
-        primary: 
-    }
+        primary: {
+            main: "#5f524d",
+            litLighter: "#8a766c",
+            lighter: "#a89a8f",
+            superLigther: "#d9d4cf",
+        },
+    },
 })

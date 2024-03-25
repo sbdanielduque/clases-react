@@ -7,6 +7,7 @@ const ItemListContainer = (props) => {
             <Grid
                 item
                 xs={12}
+                s={8}
                 sx={{
                     height: "100vh",
                     display: "flex",
@@ -14,7 +15,9 @@ const ItemListContainer = (props) => {
                     alignItems: "center",
                 }}
             >
-                <Typography variant="h1">{greeting}</Typography>
+                <Typography variant="h1" color="primary">
+                    {greeting}
+                </Typography>
             </Grid>
         </Grid>
     )

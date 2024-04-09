@@ -8,7 +8,7 @@ function App() {
         <>
             <ThemeProvider theme={principalTheme}>
                 <Layout>
-                    <ItemListContainer greeting={"Bienvenidos a mi tienda"} />
+                    <ItemListContainer />
                 </Layout>
             </ThemeProvider>
         </>

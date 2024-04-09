@@ -1,30 +1,31 @@
-import { Grid, Typography } from "@mui/material"
 import "./ItemListContainer.css"
+import { products } from "../../../productMock.js"
+import { useEffect, useState } from "react"
+import ItemList from "./ItemList.jsx"
 
 const ItemListContainer = ({ greeting }) => {
-    return (
-        <Grid container>
-            <Grid item className="img-container" xs={12}>
-                <img
-                    className="bg-img"
-                    src="https://res.cloudinary.com/dzvzm9qcl/image/upload/v1711688338/wallpaper_y3fja2.jpg"
-                    alt="banner"
-                />
-            </Grid>
-            <Grid
-                item
-                xs={12}
-                sx={{
-                    height: "100vh",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-            >
-                <Typography variant="h1">{greeting}</Typography>
-            </Grid>
-        </Grid>
-    )
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const getProducts = new Promise((resolve, reject) => {
+            let x = true
+            if (x) {
+                setTimeout(() => {
+                    resolve(products)
+                }, 1000)
+            } else {
+                reject({ status: 400, message: "algo salio mal" })
+            }
+        })
+        getProducts
+            .then((res) => setItems(res))
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [])
+
+    console.log(items)
+    return <ItemList items={items} />
 }
 
 export default ItemListContainer

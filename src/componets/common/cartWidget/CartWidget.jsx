@@ -6,7 +6,7 @@ const CartWidget = () => {
         <>
             <Badge badgeContent={3} color="primary">
                 <ShoppingCartIcon
-                    fontSize="large"
+                    fontSize="small"
                     sx={{ color: "primary.lighter" }}
                 />
             </Badge>

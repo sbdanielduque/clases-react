@@ -1,6 +1,7 @@
 import { AppBar, Button, Grid, Toolbar } from "@mui/material"
 import "./Navbar.css"
 import CartWidget from "../../common/cartWidget/CartWidget"
+import { size } from "@floating-ui/core"
 
 const Navbar = () => {
     return (
@@ -12,19 +13,26 @@ const Navbar = () => {
                     }}
                     position="static"
                 >
-                    <Toolbar>
+                    <Toolbar
+                        sx={{
+                            marginRight: "75px",
+                            marginLeft: "75px",
+                        }}
+                    >
                         <Button href="#">
                             <img
                                 className="logo-img"
-                                src="https://res.cloudinary.com/dzvzm9qcl/image/upload/v1711393060/_xZ1wDO-Kik0oa11NkN7k-transformed_vm0hje.png"
+                                src="https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712624031/Original_3_gbvbje.png"
                                 alt="logo"
                             />
                         </Button>
                         <Button
-                            className="buttonNav"
                             color="inherit"
                             href="#tshirt"
-                            sx={{ marginLeft: "auto", marginRight: "25px" }}
+                            sx={{
+                                marginLeft: "auto",
+                                marginRight: "25px",
+                            }}
                         >
                             T-shirts
                         </Button>

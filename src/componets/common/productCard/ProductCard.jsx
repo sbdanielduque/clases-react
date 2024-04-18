@@ -8,7 +8,7 @@ import {
 } from "@mui/material"
 const ProductCard = ({ name, price, img, description }) => {
     return (
-        <Card sx={{ maxWidth: 250, maxHeight: "auto" }}>
+        <Card sx={{ minWidth: 300, maxHeight: "auto" }}>
             <CardMedia
                 component="img"
                 alt="t-shirt All Saints Black"

@@ -1,7 +1,6 @@
 import { Grid, Typography } from "@mui/material"
 import ProductCard from "../../common/productCard/ProductCard"
 import "./ItemListContainer.css"
-import { margin } from "@mui/system"
 
 const ItemList = ({ items }) => {
     return (
@@ -26,10 +25,11 @@ const ItemList = ({ items }) => {
                             marginTop="50px"
                         >
                             <ProductCard
+                                id={item.id}
                                 name={item.name}
                                 img={item.img}
                                 description={item.description}
-                                price={item.price}
+                                price={item.price.toFixed(2)}
                             />
                         </Grid>
                     )

@@ -6,9 +6,10 @@ import {
     CardMedia,
     Typography,
 } from "@mui/material"
-const ProductCard = ({ name, price, img, description }) => {
+import { Link } from "react-router-dom"
+const ProductCard = ({ name, price, img, description, id }) => {
     return (
-        <Card sx={{ minWidth: 300, maxHeight: "auto" }}>
+        <Card sx={{ minWidth: 300, maxWidth: 300, maxHeight: "auto" }}>
             <CardMedia
                 component="img"
                 alt="t-shirt All Saints Black"
@@ -22,10 +23,27 @@ const ProductCard = ({ name, price, img, description }) => {
                     borderTop: "solid 1px black",
                 }}
             >
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="div"
+                    sx={{
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                    }}
+                >
                     {name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                    }}
+                >
                     {description}
                 </Typography>
             </CardContent>
@@ -43,9 +61,11 @@ const ProductCard = ({ name, price, img, description }) => {
                 >
                     ${price}
                 </Typography>
-                <Button variant="contained" size="small">
-                    Detail
-                </Button>
+                <Link to={`/detail/${id}`}>
+                    <Button variant="contained" size="small">
+                        Detail
+                    </Button>
+                </Link>
             </CardActions>
         </Card>
     )

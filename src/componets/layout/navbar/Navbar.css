@@ -1,8 +1,7 @@
 .logo-img {
-    height: 100px;
+    height: 80px;
     margin: 0;
 }
-
-/* .navBar {
-    background-color: #968579;
-} */
+.navBar-Space {
+    margin-left: auto;
+}

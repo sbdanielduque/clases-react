@@ -1,17 +1,29 @@
-import { ThemeProvider } from "@mui/material"
-import Footer from "./componets/layout/footer/Footer.jsx"
-import Navbar from "./componets/layout/navbar/Navbar.jsx"
-import { principalTheme } from "./componets/common/themeConfig/ThemeConfig.js"
 import ItemListContainer from "./componets/pages/itemListContainer/ItemListContainer.jsx"
+import Layout from "./componets/layout/Layout.jsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ItemDetailContainer from "./componets/pages/itemDetail/ItemDetailContainer.jsx"
+import CartContainer from "./componets/pages/cart/CartContainer.jsx"
 
 function App() {
     return (
         <>
-            <ThemeProvider theme={principalTheme}>
-                <Navbar />
-                <ItemListContainer greeting={"Bienvenidos a mi tienda"} />
-                <Footer />
-            </ThemeProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<Layout />}>
+                        <Route path="/" element={<ItemListContainer />} />
+                        <Route
+                            path="/category/:category"
+                            element={<ItemListContainer />}
+                        />
+                        <Route
+                            path="detail/:id"
+                            element={<ItemDetailContainer />}
+                        />
+                        <Route path="/cart" element={<CartContainer />} />
+                        <Route path="*" element={<h1>error 404</h1>} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </>
     )
 }

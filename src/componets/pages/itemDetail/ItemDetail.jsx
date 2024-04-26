@@ -57,7 +57,7 @@ const ItemDetail = ({ item }) => {
                                 color="text.secondary"
                                 sx={{ textAlign: "center", marginTop: "15px" }}
                             >
-                                ${price}
+                                ${price?.toFixed(2)}
                             </Typography>
                         </CardContent>
                     </Card>

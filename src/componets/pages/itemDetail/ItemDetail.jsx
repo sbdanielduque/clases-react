@@ -9,9 +9,10 @@ import {
     Typography,
 } from "@mui/material"
 import "./itemDetail.css"
+import CounterContainer from "../../common/counter/CounterContainer"
 
-const ItemDetail = ({ item }) => {
-    const { name, price, description, brand, img } = item
+const ItemDetail = ({ item, onAdd }) => {
+    const { name, price, description, brand, img, stock } = item
     return (
         <>
             <Grid container sx={{ padding: "100px" }} spacing={6}>
@@ -59,6 +60,7 @@ const ItemDetail = ({ item }) => {
                             >
                                 ${price?.toFixed(2)}
                             </Typography>
+                            <CounterContainer stock={stock} onAdd={onAdd} />
                         </CardContent>
                     </Card>
                 </Grid>

@@ -16,8 +16,11 @@ const ItemDetailContainer = () => {
         getProduct.then((res) => setItem(res))
     }, [id])
 
-    console.log(item)
-    return <ItemDetail item={item} />
+    const onAdd = (quantity) => {
+        let newObj = { ...item, quantity }
+        console.log(newObj)
+    }
+    return <ItemDetail item={item} onAdd={onAdd} />
 }
 
 export default ItemDetailContainer

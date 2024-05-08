@@ -28,16 +28,26 @@ const Navbar = () => {
                                 />
                             </Button>
                         </Link>
-                        <Link to={"/category/tshirt"} className="navBar-Space ">
+                        <Link to={"/"} className="navBar-Space ">
                             <Button
                                 color="inherit"
                                 sx={{
-                                    marginLeft: "auto",
                                     marginRight: "25px",
                                     color: "primary.superLigther",
                                 }}
                             >
-                                T-shirts
+                                Home
+                            </Button>
+                        </Link>
+                        <Link to={"/category/tshirt"}>
+                            <Button
+                                sx={{
+                                    marginRight: "25px",
+                                    color: "primary.superLigther",
+                                }}
+                                color="inherit"
+                            >
+                                Tshirts
                             </Button>
                         </Link>
                         <Link to={"/category/pants"}>
@@ -62,18 +72,7 @@ const Navbar = () => {
                                 Hoodies
                             </Button>
                         </Link>
-                        {/* <Link to={"/category/accesories"}>
-                            <Button
-                                sx={{
-                                    marginRight: "25px",
-                                    color: "primary.superLigther",
-                                }}
-                                color="inherit"
-                            >
-                                accesories
-                            </Button>
-                        </Link> */}
-                        <Button>
+                        <Button color="inherit">
                             <CartWidget />
                         </Button>
                     </Toolbar>

@@ -6,7 +6,7 @@ export const products = [
         price: 95,
         description:
             "t-shirt All Saints Black overSize asian letters Logo, London",
-        stock: 100,
+        stock: 80,
         brand: "all saints",
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712616812/t_shirt_all_saints_black_c03szm.avif",
     },

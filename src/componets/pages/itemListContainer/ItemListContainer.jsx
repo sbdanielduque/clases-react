@@ -1,10 +1,13 @@
 import "./ItemListContainer.css"
 import { products } from "../../../productMock.js"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
+import { TopButtonContext } from "../../../context/TopButton.jsx"
 
 const ItemListContainer = () => {
+    const { topButton, scrollUp } = useContext(TopButtonContext)
+
     const [items, setItems] = useState([])
 
     const { category } = useParams()
@@ -29,7 +32,7 @@ const ItemListContainer = () => {
             })
     }, [category])
 
-    return <ItemList items={items} />
+    return <ItemList items={items} topButton={topButton} scrollUp={scrollUp} />
 }
 
 export default ItemListContainer

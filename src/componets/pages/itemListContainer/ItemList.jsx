@@ -1,8 +1,9 @@
-import { Grid, Typography } from "@mui/material"
+import { Grid, IconButton } from "@mui/material"
 import ProductCard from "../../common/productCard/ProductCard"
 import "./ItemListContainer.css"
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp"
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, topButton, scrollUp }) => {
     return (
         <Grid container>
             <Grid item className="img-container" xs={12}>
@@ -35,6 +36,15 @@ const ItemList = ({ items }) => {
                     )
                 })}
             </Grid>
+            {topButton && (
+                <IconButton
+                    aria-label="delete"
+                    sx={{ position: "fixed", right: "100px", bottom: "100px" }}
+                    onClick={scrollUp}
+                >
+                    <ArrowCircleUpIcon sx={{ fontSize: "50px" }} />
+                </IconButton>
+            )}
         </Grid>
     )
 }

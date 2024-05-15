@@ -12,7 +12,7 @@ const ProductCard = ({ name, price, img, description, id }) => {
         <Card sx={{ minWidth: 300, maxWidth: 300, maxHeight: "auto" }}>
             <CardMedia
                 component="img"
-                alt="t-shirt All Saints Black"
+                alt={description}
                 height="300"
                 image={img}
                 sx={{ objectFit: "contain" }}

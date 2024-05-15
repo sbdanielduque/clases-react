@@ -16,7 +16,7 @@ export const products = [
         category: "tshirt",
         price: 85,
         description: "t-shirt All Saints black round logo white",
-        stock: 100,
+        stock: 8,
         brand: "all saints",
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712616744/t_shirt_all_saints_round_black_ybtphb.avif",
     },

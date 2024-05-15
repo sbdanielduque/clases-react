@@ -5,15 +5,8 @@ import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp"
 
 const ItemList = ({ items, topButton, scrollUp }) => {
     return (
-        <Grid container>
-            <Grid item className="img-container" xs={12}>
-                <img
-                    className="bg-img"
-                    src="https://res.cloudinary.com/dzvzm9qcl/image/upload/v1711688338/wallpaper_y3fja2.jpg"
-                    alt="banner"
-                />
-            </Grid>
-            <Grid container sx={{ marginRight: "75px", marginLeft: "75px" }}>
+        <>
+            <Grid container>
                 {items.map((item) => {
                     return (
                         <Grid
@@ -39,13 +32,17 @@ const ItemList = ({ items, topButton, scrollUp }) => {
             {topButton && (
                 <IconButton
                     aria-label="delete"
-                    sx={{ position: "fixed", right: "100px", bottom: "100px" }}
+                    sx={{
+                        position: "fixed",
+                        right: "100px",
+                        bottom: "100px",
+                    }}
                     onClick={scrollUp}
                 >
                     <ArrowCircleUpIcon sx={{ fontSize: "50px" }} />
                 </IconButton>
             )}
-        </Grid>
+        </>
     )
 }
 

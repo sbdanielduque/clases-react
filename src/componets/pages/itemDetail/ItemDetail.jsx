@@ -1,5 +1,4 @@
 import {
-    Button,
     Card,
     CardActions,
     CardContent,
@@ -10,13 +9,22 @@ import {
 import "./itemDetail.css"
 import CounterContainer from "../../common/counter/CounterContainer"
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item, onAdd, initial }) => {
     const { name, price, description, brand, img, stock } = item
     return (
-        <>
-            <Grid container sx={{ padding: "100px" }} spacing={6}>
-                <Grid item xs={12} md={6}>
-                    <Card sx={{ minWidth: "500px" }}>
+        <div className="container">
+            <Grid
+                container
+                sx={{
+                    padding: "100px",
+                    margin: "0",
+                    display: " flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                }}
+            >
+                <Grid item xs={12} md={6} sx={{ maxWidth: "500px !important" }}>
+                    <Card>
                         <CardMedia
                             component="img"
                             alt={description}
@@ -26,9 +34,13 @@ const ItemDetail = ({ item, onAdd }) => {
                         />
                     </Card>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} sx={{ maxWidth: "500px !important" }}>
                     <Card
-                        sx={{ width: "500px", bgcolor: "primary.superLigther" }}
+                        sx={{
+                            height: "400px",
+                            width: "500px",
+                            bgcolor: "primary.superLigther",
+                        }}
                     >
                         <CardContent>
                             <Typography
@@ -59,12 +71,16 @@ const ItemDetail = ({ item, onAdd }) => {
                             >
                                 ${price?.toFixed(2)}
                             </Typography>
-                            <CounterContainer stock={stock} onAdd={onAdd} />
+                            <CounterContainer
+                                stock={stock}
+                                onAdd={onAdd}
+                                initial={initial}
+                            />
                         </CardContent>
                     </Card>
                 </Grid>
             </Grid>
-        </>
+        </div>
     )
 }
 

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Counter from "./Counter"
+import Swal from "sweetalert2"
 
 const CounterContainer = ({ stock, initial = 1, onAdd }) => {
     const [counter, setCounter] = useState(initial)
@@ -8,7 +9,11 @@ const CounterContainer = ({ stock, initial = 1, onAdd }) => {
         if (counter < stock) {
             setCounter(counter + 1)
         } else {
-            alert("no hay mas stock")
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Not more in Stock!",
+            })
         }
     }
 
@@ -16,7 +21,11 @@ const CounterContainer = ({ stock, initial = 1, onAdd }) => {
         if (counter > 1) {
             setCounter(counter - 1)
         } else {
-            alert("no puedes menos de 1")
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+            })
         }
     }
 

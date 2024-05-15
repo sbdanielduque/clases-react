@@ -72,9 +72,11 @@ const Navbar = () => {
                                 Hoodies
                             </Button>
                         </Link>
-                        <Button color="inherit">
-                            <CartWidget />
-                        </Button>
+                        <Link to={"/cart"}>
+                            <Button color="inherit">
+                                <CartWidget />
+                            </Button>
+                        </Link>
                     </Toolbar>
                 </AppBar>
             </Grid>

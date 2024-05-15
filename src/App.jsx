@@ -3,7 +3,7 @@ import Layout from "./componets/layout/Layout.jsx"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ItemDetailContainer from "./componets/pages/itemDetail/ItemDetailContainer.jsx"
 import CartContainer from "./componets/pages/cart/CartContainer.jsx"
-import { Checkout } from "./componets/pages/checkout/Checkout.jsx"
+import { CheckoutFormik } from "./componets/pages/checkout/CheckoutFormik.jsx"
 import CartContextProvider from "./context/CartContext.jsx"
 import TopButtonProvider from "./context/TopButton.jsx"
 
@@ -33,7 +33,7 @@ function App() {
                                 />
                                 <Route
                                     path="/checkout"
-                                    element={<Checkout />}
+                                    element={<CheckoutFormik />}
                                 />
                                 <Route path="*" element={<h1>error 404</h1>} />
                             </Route>

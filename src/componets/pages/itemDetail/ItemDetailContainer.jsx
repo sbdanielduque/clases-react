@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
-import { products } from "../../../productMock"
 import { CartContext } from "../../../context/CartContext"
 import Swal from "sweetalert2"
+import { db } from "../../../firebaseConfig"
+import { collection, doc, getDoc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -13,11 +14,11 @@ const ItemDetailContainer = () => {
     let initial = getQuantityById(id)
 
     useEffect(() => {
-        let itemFounded = products.find((product) => product.id === id)
-        const getProduct = new Promise((resolve, reject) => {
-            resolve(itemFounded)
+        const productsCollection = collection(db, "products")
+        let refDoc = doc(productsCollection, id)
+        getDoc(refDoc).then((res) => {
+            setItem({ id: res.id, ...res.data() })
         })
-        getProduct.then((res) => setItem(res))
     }, [id])
 
     const onAdd = (quantity) => {

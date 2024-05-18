@@ -1,27 +1,14 @@
 export const products = [
     {
-        id: "1",
-        name: "All Saints ASIAN",
-        category: "tshirt",
-        price: 95,
-        description:
-            "t-shirt All Saints Black overSize asian letters Logo, London",
-        stock: 80,
-        brand: "all saints",
-        img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712616812/t_shirt_all_saints_black_c03szm.avif",
-    },
-    {
-        id: "2",
         name: "All Saints round Logo",
         category: "tshirt",
         price: 85,
         description: "t-shirt All Saints black round logo white",
-        stock: 8,
+        stock: 100,
         brand: "all saints",
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712616744/t_shirt_all_saints_round_black_ybtphb.avif",
     },
     {
-        id: "3",
         name: "Drew letters Logo ",
         category: "tshirt",
         price: 65,
@@ -31,7 +18,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712618394/t_shirt_drew_kzeid1.webp",
     },
     {
-        id: "4",
         name: "Drew logo smile",
         category: "tshirt",
         price: 65,
@@ -41,7 +27,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712616992/drew_smile_face_logo_white_jndcj6.webp",
     },
     {
-        id: "5",
         name: "Essential",
         category: "tshirt",
         price: 70,
@@ -51,7 +36,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712608813/t_shirt_essential_black_ngkv2z.webp",
     },
     {
-        id: "6",
         name: "Essential",
         category: "tshirt",
         price: 70,
@@ -61,17 +45,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712608251/t_shirt_essential_cream_qootjc.webp",
     },
     {
-        id: "7",
-        name: "Essential Hoodie",
-        category: "hoodie",
-        price: 140,
-        description: "hoodie essential no pockets big logo 'Fear Of God",
-        stock: 100,
-        brand: "Essential",
-        img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712608816/hoodie_essential_fear_of_god_black_yisjdk.webp",
-    },
-    {
-        id: "8",
         name: "Essential Hoodie",
         category: "hoodie",
         price: 140,
@@ -81,7 +54,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712608816/hoodie_essential_black_a8szev.webp",
     },
     {
-        id: "9",
         name: "Drew hoodie",
         category: "hoodie",
         price: 150,
@@ -91,7 +63,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712880890/hoodie_drew_cream_smile_logo_hd01dg.webp",
     },
     {
-        id: "10",
         name: "Drew hoodie",
         category: "hoodie",
         price: 150,
@@ -101,7 +72,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712880707/hoodie_drew_logo_black_x14hhg.webp",
     },
     {
-        id: "11",
         name: "Off-white hoodie",
         category: "hoodie",
         price: 90,
@@ -111,7 +81,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712880708/hoodie_offwhite_white_qosxwj.webp",
     },
     {
-        id: "12",
         name: "RamitheIcon hoodie ",
         category: "hoodie",
         price: 50,
@@ -121,7 +90,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712880707/hoodie_ramitheicon_Icon_logo_black_j178sz.webp",
     },
     {
-        id: "13",
         name: "Essential sweetpants ",
         category: "pants",
         price: 60,
@@ -131,7 +99,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712984213/pants_essential_light_oatmeal_a7azyz.avif",
     },
     {
-        id: "14",
         name: "Essential sweetpants ",
         category: "pants",
         price: 60,
@@ -141,7 +108,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712984278/pants_essential_black_olshjz.webp",
     },
     {
-        id: "15",
         name: "Original Jeans",
         category: "pants",
         price: 120,
@@ -151,7 +117,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712982659/pants_custom_jeans_bkack_cnft7y.jpg",
     },
     {
-        id: "16",
         name: "Original Sponge",
         category: "pants",
         price: 130,
@@ -161,7 +126,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712982655/pants_jean_custom_sponge_bob_wigrrd.jpg",
     },
     {
-        id: "17",
         name: "Pacsun cargo",
         category: "pants",
         price: 40,
@@ -171,7 +135,6 @@ export const products = [
         img: "https://res.cloudinary.com/dzvzm9qcl/image/upload/v1712982796/pants_cargo_slimfit_cream_ehcgm0.webp",
     },
     {
-        id: "18",
         name: "Pacsun cargo",
         category: "pants",
         price: 40,

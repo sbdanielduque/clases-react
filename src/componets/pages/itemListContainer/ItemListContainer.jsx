@@ -1,12 +1,13 @@
 import "./ItemListContainer.css"
-import { products } from "../../../productMock.js"
 import { useContext, useEffect, useState } from "react"
 import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
 import { TopButtonContext } from "../../../context/TopButton.jsx"
-import Skeleton from "../../common/skeleton/SkeletonLoading"
 import { Grid } from "@mui/material"
 import SkeletonLoading from "../../common/skeleton/SkeletonLoading"
+import { db } from "../../../firebaseConfig.js"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
+import { products } from "../../../productMock.js"
 
 const ItemListContainer = () => {
     const { topButton, scrollUp } = useContext(TopButtonContext)
@@ -16,27 +17,55 @@ const ItemListContainer = () => {
     const { category } = useParams()
 
     useEffect(() => {
-        let productsFiltered = products.filter(
-            (product) => product.category === category
-        )
-
-        const getProducts = new Promise((resolve, reject) => {
-            let x = true
-            if (x) {
-                setTimeout(() => {
-                    resolve(category ? productsFiltered : products)
-                }, 2000)
-            } else {
-                reject({ status: 400, message: "algo salio mal" })
-            }
-        })
-        getProducts
-            .then((res) => setItems(res))
-            .catch((error) => {
-                console.log(error)
+        /* NO FILTRADO, TRAE TODA LA LISTA DE PRODUCTOS */
+        /* -------------------------------------------------------- */
+        /* const productsCollection = collection(db, "products")
+        getDocs(productsCollection).then((res) => {
+            let newArray = res.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() }
             })
-    }, [category])
+            setItems(newArray)
+        }) */
 
+        /* FILTRADO CON QUERY */
+        /* -------------------------------------------------- */
+        /*    const productsCollection = collection(db, "products")
+        let productsFiltered = query(
+            productsCollection,
+            where("category", "==", category )
+            getDocs(productsFiltered).then((res) => {
+                let newArray = res.docs.map((doc) => {
+                    return { id: doc.id, ...doc.data() }
+                })
+                setItems(newArray)
+            })
+        ) */
+
+        /* TRAE LA COLECCION COMPLETA O FILTRADA */
+        /* ----------------------------------------------------- */
+
+        const productsCollection = collection(db, "products")
+        let productsList = productsCollection
+        if (category) {
+            productsList = query(
+                productsCollection,
+                where("category", "==", category)
+            )
+        }
+        getDocs(productsList).then((res) => {
+            let newArray = res.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() }
+            })
+            setTimeout(() => {
+                setItems(newArray)
+            }, 1000)
+        })
+    }, [category])
+    //-------------- FUNCION PARA AGREGAR TODO EL ARREGLO A LA DB ---------------------
+    /*  const addDocsProducts = () => {
+        let productsCollection = collection(db, "products")
+        products.forEach((product) => addDoc(productsCollection, product))
+    } */
     return (
         <>
             <Grid item className="img-container" xs={12}>
@@ -46,6 +75,7 @@ const ItemListContainer = () => {
                     alt="banner"
                 />
             </Grid>
+
             {/* Condicional Rendering. */}
             {items.length > 0 ? (
                 <ItemList

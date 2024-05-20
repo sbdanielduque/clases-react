@@ -2,7 +2,7 @@ import { Button } from "@mui/material"
 import React from "react"
 import { Link } from "react-router-dom"
 
-const Cart = ({ cart, clearCart, deleteItem, total, clearCartAlert }) => {
+const Cart = ({ cart, deleteItem, total, clearCartAlert }) => {
     return (
         <div>
             <h1>Este es el carrito</h1>
@@ -16,7 +16,7 @@ const Cart = ({ cart, clearCart, deleteItem, total, clearCartAlert }) => {
                     </button>
                 </div>
             ))}
-            <div>el total a pagar es: {total}</div> {/* agregar estilos */}
+            <div>el total a pagar es: {total}</div>
             <Link to={"/checkout"}>
                 <Button variant="contained">Finalizar compra</Button>
             </Link>

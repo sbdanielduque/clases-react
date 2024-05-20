@@ -17,33 +17,6 @@ const ItemListContainer = () => {
     const { category } = useParams()
 
     useEffect(() => {
-        /* NO FILTRADO, TRAE TODA LA LISTA DE PRODUCTOS */
-        /* -------------------------------------------------------- */
-        /* const productsCollection = collection(db, "products")
-        getDocs(productsCollection).then((res) => {
-            let newArray = res.docs.map((doc) => {
-                return { id: doc.id, ...doc.data() }
-            })
-            setItems(newArray)
-        }) */
-
-        /* FILTRADO CON QUERY */
-        /* -------------------------------------------------- */
-        /*    const productsCollection = collection(db, "products")
-        let productsFiltered = query(
-            productsCollection,
-            where("category", "==", category )
-            getDocs(productsFiltered).then((res) => {
-                let newArray = res.docs.map((doc) => {
-                    return { id: doc.id, ...doc.data() }
-                })
-                setItems(newArray)
-            })
-        ) */
-
-        /* TRAE LA COLECCION COMPLETA O FILTRADA */
-        /* ----------------------------------------------------- */
-
         const productsCollection = collection(db, "products")
         let productsList = productsCollection
         if (category) {
@@ -61,11 +34,6 @@ const ItemListContainer = () => {
             }, 1000)
         })
     }, [category])
-    //-------------- FUNCION PARA AGREGAR TODO EL ARREGLO A LA DB ---------------------
-    /*  const addDocsProducts = () => {
-        let productsCollection = collection(db, "products")
-        products.forEach((product) => addDoc(productsCollection, product))
-    } */
     return (
         <>
             <Grid item className="img-container" xs={12}>
@@ -75,8 +43,6 @@ const ItemListContainer = () => {
                     alt="banner"
                 />
             </Grid>
-
-            {/* Condicional Rendering. */}
             {items.length > 0 ? (
                 <ItemList
                     items={items}

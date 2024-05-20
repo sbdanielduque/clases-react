@@ -20,18 +20,15 @@ export const CheckoutFormik = () => {
                 total,
             }
 
-            /* ---------Get Order Id for show after buy --------- */
             let ordersCollection = collection(db, "orders")
             addDoc(ordersCollection, obj).then((res) => setOrderId(res.id))
 
-            /* ---------- Update Stock--------- */
             cart.forEach((product) => {
                 let refDoc = doc(db, "products", product.id)
                 updateDoc(refDoc, {
                     stock: product.stock - product.quantity,
                 })
             })
-            /* ---- clear cart after buy */
             clearCart()
         },
         validationSchema: Yup.object({

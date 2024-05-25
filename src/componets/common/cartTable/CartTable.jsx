@@ -26,10 +26,10 @@ const CartTable = ({ cart, deleteItem, total }) => {
                 >
                     <TableHead>
                         <TableRow>
-                            <TableCell>img</TableCell>
-                            <TableCell>nombre</TableCell>
-                            <TableCell>cantidad</TableCell>
-                            <TableCell align="right">precio</TableCell>
+                            <TableCell>IMG</TableCell>
+                            <TableCell>NAME</TableCell>
+                            <TableCell>QUANTITY</TableCell>
+                            <TableCell align="right">PRICE</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

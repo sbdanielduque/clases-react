@@ -6,8 +6,7 @@ import { TopButtonContext } from "../../../context/TopButton.jsx"
 import { Grid } from "@mui/material"
 import SkeletonLoading from "../../common/skeleton/SkeletonLoading"
 import { db } from "../../../firebaseConfig.js"
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
-import { products } from "../../../productMock.js"
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 const ItemListContainer = () => {
     const { topButton, scrollUp } = useContext(TopButtonContext)

@@ -1,4 +1,4 @@
-import { Box, Button, IconButton } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import React from "react"
 import { Link } from "react-router-dom"
 import DeleteIcon from "@mui/icons-material/Delete"
@@ -14,13 +14,34 @@ const Cart = ({ cart, deleteItem, total, clearCartAlert }) => {
                         deleteItem={deleteItem}
                         total={total}
                     />
-                    <div>your total is: {total}</div>
-                    <Link to={"/checkout"}>
-                        <Button variant="contained">Checkout</Button>
-                    </Link>
-                    <Button onClick={clearCartAlert} variant="outlined">
-                        Clear cart
-                    </Button>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Typography
+                            variant="h3"
+                            sx={{ marginTop: "50px", marginBottom: "50px" }}
+                        >
+                            Your total is: {total.toFixed(2)}
+                        </Typography>
+                        <div>
+                            <Link to={"/checkout"}>
+                                <Button
+                                    variant="contained"
+                                    sx={{ marginRight: "25px" }}
+                                >
+                                    Checkout
+                                </Button>
+                            </Link>
+                            <Button onClick={clearCartAlert} variant="outlined">
+                                Clear cart
+                            </Button>
+                        </div>
+                    </Box>
                 </>
             ) : (
                 <Box

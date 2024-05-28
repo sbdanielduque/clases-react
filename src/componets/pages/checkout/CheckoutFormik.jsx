@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material"
+import { Button, TextField, Typography } from "@mui/material"
 import "./checkout.css"
 import { useFormik } from "formik"
 import * as Yup from "yup"
@@ -43,10 +43,21 @@ export const CheckoutFormik = () => {
     return (
         <>
             {orderId ? (
-                <h1>Your order is: {orderId} </h1>
+                <div className="checkoutBox">
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            border: "2px solid #fff",
+                            padding: "20px",
+                            borderRadius: 2,
+                        }}
+                    >
+                        Your order is: <div>{orderId}</div>
+                    </Typography>
+                </div>
             ) : (
                 <div className="formContainer">
-                    <form onSubmit={handleSubmit}>
+                    <form className="formColumn" onSubmit={handleSubmit}>
                         <TextField
                             variant="outlined"
                             type="text"
@@ -55,6 +66,7 @@ export const CheckoutFormik = () => {
                             onChange={handleChange}
                             error={errors.name ? true : false}
                             helperText={errors.name}
+                            sx={{ width: "400px" }}
                         />
                         <TextField
                             variant="outlined"
@@ -64,6 +76,7 @@ export const CheckoutFormik = () => {
                             onChange={handleChange}
                             error={errors.phone ? true : false}
                             helperText={errors.phone}
+                            sx={{ width: "400px" }}
                         />
                         <TextField
                             variant="outlined"
@@ -73,8 +86,13 @@ export const CheckoutFormik = () => {
                             onChange={handleChange}
                             error={errors.email ? true : false}
                             helperText={errors.email}
+                            sx={{ width: "400px" }}
                         />
-                        <Button variant="contained" type="submit">
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            sx={{ width: "200px" }}
+                        >
                             Enviar
                         </Button>
                     </form>

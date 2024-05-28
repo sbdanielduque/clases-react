@@ -5,3 +5,18 @@
     padding: 100px;
     height: calc(100vh - 180px);
 }
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.checkoutBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    justify-content: center;
+}

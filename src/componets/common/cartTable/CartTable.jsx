@@ -5,10 +5,12 @@ import {
     TableBody,
     TableRow,
     TableCell,
+    IconButton,
 } from "@mui/material"
+import DeleteIcon from "@mui/icons-material/Delete"
 import "./cartTable.css"
 
-const CartTable = ({ cart, deleteItem, total }) => {
+const CartTable = ({ cart, deleteItem }) => {
     return (
         <div>
             <TableContainer
@@ -22,14 +24,17 @@ const CartTable = ({ cart, deleteItem, total }) => {
                     sx={{
                         width: "700px",
                         border: "2px solid #fff",
+                        borderRadius: "3px",
+                        borderCollapse: "initial",
                     }}
                 >
                     <TableHead>
                         <TableRow>
                             <TableCell>IMG</TableCell>
                             <TableCell>NAME</TableCell>
-                            <TableCell>QUANTITY</TableCell>
-                            <TableCell align="right">PRICE</TableCell>
+                            <TableCell align="center">QUANTITY</TableCell>
+                            <TableCell align="center">PRICE</TableCell>
+                            <TableCell align="right">DELETE</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -43,9 +48,20 @@ const CartTable = ({ cart, deleteItem, total }) => {
                                     />
                                 </TableCell>
                                 <TableCell>{product.name}</TableCell>
-                                <TableCell>{product.quantity}</TableCell>
-                                <TableCell align="right">
+                                <TableCell align="center">
+                                    {product.quantity}
+                                </TableCell>
+                                <TableCell align="center">
                                     {product.price}
+                                </TableCell>
+                                <TableCell align="right">
+                                    <IconButton
+                                        onClick={() => deleteItem(product.id)}
+                                        aria-label="delete"
+                                        color="error"
+                                    >
+                                        <DeleteIcon />
+                                    </IconButton>
                                 </TableCell>
                             </TableRow>
                         ))}

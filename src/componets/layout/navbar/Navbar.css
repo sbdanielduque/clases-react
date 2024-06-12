@@ -5,3 +5,12 @@
 .navBar-Space {
     margin-left: auto;
 }
+
+a {
+    text-decoration: none;
+}
+
+div.MuiPaper-root {
+    border-radius: 0;
+    background-color: #a89a8f;
+}

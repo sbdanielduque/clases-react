@@ -11,7 +11,7 @@ const CartWidget = () => {
             <Badge badgeContent={total} color="primary">
                 <ShoppingCartIcon
                     fontSize="small"
-                    sx={{ color: "primary.lighter" }}
+                    sx={{ color: "primary.main" }}
                 />
             </Badge>
         </>

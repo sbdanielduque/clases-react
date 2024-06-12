@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
     return (
         <Grid container>
-            <Grid item sm={12}>
+            <Grid item xs={12}>
                 <AppBar
                     sx={{
                         bgcolor: "primary.litLighter",

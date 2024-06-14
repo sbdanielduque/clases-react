@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: "block", md: "none" },
-                                marginTop: 2,
+                                marginTop: 1.9,
                                 marginLeft: 2,
                             }}
                         >

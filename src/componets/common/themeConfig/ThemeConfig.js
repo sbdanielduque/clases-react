@@ -7,6 +7,7 @@ export const principalTheme = createTheme({
             litLighter: "#8a766c",
             lighter: "#a89a8f",
             superLigther: "#d9d4cf",
+            bg: "#f0eeeb",
         },
     },
 })

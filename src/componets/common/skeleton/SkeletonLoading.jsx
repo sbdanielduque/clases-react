@@ -11,7 +11,10 @@ const SkeletonLoading = () => {
                     <div key={e.id}>
                         <Stack
                             spacing={0}
-                            sx={{ marginLeft: "0", marginTop: "50px" }}
+                            sx={{
+                                marginLeft: "0",
+                                marginTop: "50px",
+                            }}
                         >
                             <Skeleton
                                 variant="rounded"

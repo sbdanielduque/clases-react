@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
 import Footer from "./footer/Footer"
-import Navbar from "./navbar/Navbar"
 import { ThemeProvider } from "@mui/material"
 import { principalTheme } from "../common/themeConfig/ThemeConfig.js"
 import "./layaout.css"

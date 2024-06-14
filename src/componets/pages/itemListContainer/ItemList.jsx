@@ -34,8 +34,8 @@ const ItemList = ({ items, topButton, scrollUp }) => {
                     aria-label="delete"
                     sx={{
                         position: "fixed",
-                        right: "100px",
-                        bottom: "100px",
+                        left: { xs: -10, md: 80 },
+                        bottom: "90px",
                     }}
                     onClick={scrollUp}
                 >

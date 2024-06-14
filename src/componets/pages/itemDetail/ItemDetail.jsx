@@ -1,6 +1,6 @@
 import {
+    Box,
     Card,
-    CardActions,
     CardContent,
     CardMedia,
     Grid,
@@ -13,61 +13,110 @@ const ItemDetail = ({ item, onAdd, initial }) => {
     const { name, price, description, brand, img, stock } = item
     return (
         <div className="container">
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "200px",
+                }}
+            >
+                <Typography color="primary" variant="h2">
+                    Detail
+                </Typography>
+            </Box>
             <Grid
                 container
                 sx={{
-                    padding: "100px",
-                    margin: "0",
-                    display: " flex",
+                    display: "flex",
                     justifyContent: "space-evenly",
                     alignItems: "center",
                 }}
             >
-                <Grid item xs={12} md={6} sx={{ maxWidth: "500px !important" }}>
-                    <Card>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{
+                        maxWidth: "700px !important",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <Card
+                        sx={{
+                            height: { xs: "250px", sm: "400px", lg: "450px" },
+                            width: { xs: "250px", sm: "500px", lg: "650px" },
+                        }}
+                    >
                         <CardMedia
                             component="img"
                             alt={description}
-                            height="400"
                             image={img}
-                            sx={{ objectFit: "contain" }}
+                            sx={{
+                                objectFit: "contain",
+                                height: { xs: "200px", sm: "400px" },
+                            }}
                         />
                     </Card>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ maxWidth: "500px !important" }}>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{
+                        maxWidth: "700px !important",
+                        my: 5,
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
                     <Card
                         sx={{
-                            height: "400px",
-                            width: "500px",
-                            bgcolor: "primary.superLigther",
+                            height: { xs: "280px", sm: "300px", lg: "450px" },
+                            width: { xs: "250px", sm: "500px", lg: "650px" },
+                            bgcolor: "primary.bg",
                         }}
                     >
                         <CardContent>
                             <Typography
                                 gutterBottom
-                                variant="body2"
                                 color="text.secondary"
-                                sx={{ textAlign: "center" }}
+                                sx={{
+                                    textAlign: "center",
+                                    fontSize: { lg: "20px" },
+                                }}
                             >
                                 {brand}
                             </Typography>
                             <Typography
-                                variant="h2"
-                                sx={{ textAlign: "center" }}
+                                variant="h5"
+                                sx={{
+                                    textAlign: "center",
+                                    fontSize: { lg: "45px" },
+                                }}
                             >
                                 {name}
                             </Typography>
                             <Typography
-                                variant="body2"
+                                variant="subtitle2"
                                 color="text.secondary"
-                                sx={{ textAlign: "center" }}
+                                sx={{
+                                    textAlign: "center",
+                                    fontSize: { lg: "30px" },
+                                }}
                             >
                                 {description}
                             </Typography>
                             <Typography
-                                variant="h3"
+                                variant="h5"
                                 color="text.secondary"
-                                sx={{ textAlign: "center", marginTop: "15px" }}
+                                sx={{
+                                    textAlign: "center",
+                                    marginTop: "15px",
+                                    my: { xs: 1, lg: 3 },
+                                    fontSize: { lg: "30px" },
+                                }}
                             >
                                 ${price?.toFixed(2)}
                             </Typography>
